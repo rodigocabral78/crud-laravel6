@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "a693d8a0f347df23472a6d14ed8e1c33",
+    "content-hash": "9a241c33308a31aeb9ec4c808665954b",
     "packages": [
         {
             "name": "doctrine/inflector",
@@ -5680,6 +5680,59 @@
                 "source": "https://github.com/php-fig/cache/tree/master"
             },
             "time": "2016-08-06T20:24:11+00:00"
+        },
+        {
+            "name": "rodrixcornell/apigenerate",
+            "version": "v1.1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/rodrixcornell/laravel-api-generate.git",
+                "reference": "a2e8d1b4c129d85b292ec3a950fe8d421961b333"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/rodrixcornell/laravel-api-generate/zipball/a2e8d1b4c129d85b292ec3a950fe8d421961b333",
+                "reference": "a2e8d1b4c129d85b292ec3a950fe8d421961b333",
+                "shasum": ""
+            },
+            "require": {
+                "doctrine/dbal": "^3",
+                "php": "^7.4|^8.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "Rodrixcornell\\ApiGenerate\\": "src"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Paulo Santos",
+                    "email": "paulohs.dev@gmail.com"
+                },
+                {
+                    "name": "Rodrigo Cabral",
+                    "email": "rodrixcornell@gmail.com"
+                }
+            ],
+            "description": "Easy api generate for the Laravel Framework.",
+            "homepage": "http://github.com/rodrixcornell/laravel-api-generate",
+            "keywords": [
+                "api",
+                "artisan",
+                "console",
+                "generate api",
+                "gerator",
+                "laravel"
+            ],
+            "support": {
+                "source": "https://github.com/rodrixcornell/laravel-api-generate/tree/v1.1.0"
+            },
+            "time": "2022-03-01T23:56:45+00:00"
         },
         {
             "name": "scrivo/highlight.php",
