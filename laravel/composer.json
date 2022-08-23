@@ -14,8 +14,11 @@
         "laravel/tinker": "^2.5"
     },
     "require-dev": {
+        "doctrine/dbal": "^3.0",
         "facade/ignition": "^1.16.15",
         "fakerphp/faker": "^1.9.1",
+        "krlove/eloquent-model-generator": "^1",
+        "lucascudo/laravel-pt-br-localization": "^1.2",
         "mockery/mockery": "^1.0",
         "nunomaduro/collision": "^3.0",
         "phpunit/phpunit": "^8.5.8|^9.3.3"
