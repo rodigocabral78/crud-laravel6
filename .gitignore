@@ -7,14 +7,13 @@ yarn-error.log
 bootstrap/compiled.php
 app/storage/
 
-# Laravel 5 & Lumen specific
-public/storage
-public/hot
-
 # Laravel 5 & Lumen specific with changed public path
 public_html/storage
 public_html/hot
 
+# Laravel 5 & Lumen specific
+public/storage
+public/hot
 storage/*.key
 .env
 .env.backup
@@ -23,9 +22,21 @@ Homestead.json
 /.vagrant
 .phpunit.result.cache
 
+*.md.backup
+docker-compose.override.yml
+
+### Idea ###
+.idea/
+/.idea
+
 ### VS Code ###
 .vscode/
+/.vscode
 
 ### SQLite ###
 *.sqlite
 *.sqlite-journal
+
+### Lock ###
+*.lock
+*lock.json
