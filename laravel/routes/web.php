@@ -20,3 +20,5 @@ Route::get('/', WelcomeController::class)->name('welcome');
 Auth::routes();
 
 Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
+
+Route::resource('users', UserController::class);

@@ -123,5 +123,6 @@
   "Regenerate Recovery Codes": "Gerar novamente os códigos de recuperação",
   "Show Recovery Codes": "Mostrar os códigos de recuperação",
   "Disable": "Desabilitar",
-  "Welcome to Laravel": "Bem-vindo ao Laravel"
+  "Welcome to Laravel": "Bem-vindo ao Laravel",
+  "User list": "Lista de usuários"
 }
