@@ -32,6 +32,10 @@
               <th>#</th>
               <th>{{ __('Name') }}</th>
               <th>{{ __('Email') }}</th>
+              <th>{{ __('Is admin') }}</th>
+              <th>{{ __('Is active') }}</th>
+              <th>{{ __('Created at') }}</th>
+              <th>{{ __('Updated at') }}</th>
               <th width="110px">{{ __('Action') }}</th>
             </tr>
           </thead>
@@ -42,6 +46,10 @@
               <td style="text-align: center;">{{ $user->id }}</td>
               <td>{{ $user->name }}</td>
               <td>{{ $user->email }}</td>
+              <td>{{ __(($user->isAdmin()) ? 'Yes' : 'No') }}</td>
+              <td>{{ __(($user->is_active) ? 'Yes' : 'No') }}</td>
+              <td>{{ ($user->created_at)->format('d/m/Y H:i:s') }}</td>
+              <td>{{ ($user->updated_at)->format('d/m/Y H:i:s') }}</td>
               <td style="text-align: center;">
                 <a href="{{ route('users.show',$user->id) }}" title="{{ __('Detail') }}" data-toggle="tooltip">
                   <i class="bi bi-eye-fill text-info h4"></i></a>

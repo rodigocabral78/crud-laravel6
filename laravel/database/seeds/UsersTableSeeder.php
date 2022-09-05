@@ -29,6 +29,10 @@ class UsersTableSeeder extends Seeder
             'email_verified_at' => now(),
             'password' => 'password',
             'remember_token' => Str::random(10),
+            'is_admin' => 1,
+            'is_active' => 1,
+            'created_by' => 1,
+            'updated_by' => 1,
         ]);
 
         factory(User::class, 99)->create();

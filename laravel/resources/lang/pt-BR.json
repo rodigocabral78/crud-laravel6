@@ -124,13 +124,20 @@
   "Show Recovery Codes": "Mostrar os códigos de recuperação",
   "Disable": "Desabilitar",
   "Welcome to Laravel": "Bem-vindo ao Laravel",
+  "Deleted successfully": "Apagado com sucesso",
+  "Updated successfully": "Atualizado com sucesso",
+  "Created successfully": "Criado com sucesso",
+  "Yes": "Sim",
+  "No": "Não",
   "Back": "Voltar",
   "Submit": "Enviar",
   "List": "Lista",
   "Detail": "Detalhe",
   "Edit": "Editar",
   "Add": "Adicionar",
-  "Deleted successfully": "Apagado com sucesso",
-  "Updated successfully": "Atualizado com sucesso",
-  "Created successfully": "Criado com sucesso"
+  "Is admin": "Admin",
+  "Is active": "Ativo",
+  "Created at": "Criado em",
+  "Updated at": "Atualizado em",
+  "Action": "Ação"
 }

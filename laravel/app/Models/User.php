@@ -3,6 +3,7 @@
 namespace App\Models;
 
 use Illuminate\Contracts\Auth\MustVerifyEmail;
+use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Illuminate\Support\Facades\Hash;
@@ -14,12 +15,17 @@ use Illuminate\Support\Facades\Hash;
  * @property string $email_verified_at
  * @property string $password
  * @property string $remember_token
+ * @property boolean $is_admin
+ * @property boolean $is_active
+ * @property integer $created_by
+ * @property integer $updated_by
  * @property string $created_at
  * @property string $updated_at
+ * @property string $deleted_at
  */
 class User extends Authenticatable
 {
-    use Notifiable;
+    use Notifiable, SoftDeletes;
 
     /**
      * The table associated with the model.
@@ -51,6 +57,13 @@ class User extends Authenticatable
         'name',
         'email',
         'password',
+        'is_admin',
+        'is_active',
+        // 'created_by',
+        // 'updated_by',
+        // 'created_at',
+        // 'updated_at',
+        // 'deleted_at',
     ];
 
     /**
@@ -70,6 +83,11 @@ class User extends Authenticatable
      */
     protected $casts = [
         'email_verified_at' => 'datetime',
+        'created_at' => 'datetime',
+        'updated_at' => 'datetime',
+        'deleted_at' => 'datetime',
+        'is_admin' => 'boolean',
+        'is_active' => 'boolean',
     ];
 
     /**
@@ -91,4 +109,24 @@ class User extends Authenticatable
      * @var array
      */
     // protected $with = ['author'];
+
+    /**
+     * Returns true if user is administrator.
+     *
+     * @return $this
+     */
+    public function isAdmin()
+    {
+        return $this->is_admin === true;
+    }
+
+    /**
+     * Returns true if user is active.
+     *
+     * @return $this
+     */
+    public function isActive()
+    {
+        return $this->is_active === true;
+    }
 }

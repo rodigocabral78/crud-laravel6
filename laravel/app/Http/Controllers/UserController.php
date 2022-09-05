@@ -25,6 +25,8 @@ class UserController extends Controller
      */
     public function index()
     {
+        // $auth = Auth::user()->isAdmin();
+        // dd($auth);
         // $users = User::query()->orderBy('id', 'ASC')->paginate();
         $users = User::query()->orderBy('created_at', 'DESC')->orderBy('id', 'DESC')->paginate(5);
         return view('users.index', compact('users'));
