@@ -84,4 +84,11 @@ class User extends Authenticatable
         // $this->attributes['password'] = bcrypt($password);
         $this->attributes['password'] = Hash::make($password);
     }
+
+    /**
+     * The relationships that should always be loaded.
+     *
+     * @var array
+     */
+    // protected $with = ['author'];
 }

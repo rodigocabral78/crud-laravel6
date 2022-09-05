@@ -124,5 +124,13 @@
   "Show Recovery Codes": "Mostrar os códigos de recuperação",
   "Disable": "Desabilitar",
   "Welcome to Laravel": "Bem-vindo ao Laravel",
-  "User list": "Lista de usuários"
+  "Back": "Voltar",
+  "Submit": "Enviar",
+  "List": "Lista",
+  "Detail": "Detalhe",
+  "Edit": "Editar",
+  "Add": "Adicionar",
+  "Deleted successfully": "Apagado com sucesso",
+  "Updated successfully": "Atualizado com sucesso",
+  "Created successfully": "Criado com sucesso"
 }

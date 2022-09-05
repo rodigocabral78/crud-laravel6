@@ -9,14 +9,25 @@ use Illuminate\Http\Request;
 class UserController extends Controller
 {
     /**
+     * Create a new controller instance.
+     *
+     * @return void
+     */
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
+    /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
     public function index()
     {
-        $users = User::query()->orderBy('id', 'ASC')->paginate();
-        return view('users.index', compact('users'))->with('i', (request()->input('page', 1) - 1) * 5);
+        // $users = User::query()->orderBy('id', 'ASC')->paginate();
+        $users = User::query()->orderBy('created_at', 'DESC')->orderBy('id', 'DESC')->paginate(5);
+        return view('users.index', compact('users'));
 
         // $users = User::latest()->paginate(5);
         // return view('users.index', compact('users'))->with('i', (request()->input('page', 1) - 1) * 5);
@@ -41,7 +52,7 @@ class UserController extends Controller
     public function store(UserRequest $request)
     {
         User::create($request->all());
-        return redirect()->route('users.index')->with('success', 'User created successfully.');
+        return redirect()->route('users.index')->with('success', 'Created successfully');
     }
 
     /**
@@ -76,7 +87,7 @@ class UserController extends Controller
     public function update(UserRequest $request, User $user)
     {
         $user->update($request->all());
-        return redirect()->route('users.index')->with('success', 'User updated successfully.');
+        return redirect()->route('users.index')->with('success', 'Updated successfully');
     }
 
     /**
@@ -88,6 +99,6 @@ class UserController extends Controller
     public function destroy(User $user)
     {
         $user->delete();
-        return redirect()->route('users.index')->with('success', 'User deleted successfully');
+        return redirect()->route('users.index')->with('success', 'Deleted successfully');
     }
 }
