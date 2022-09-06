@@ -13,16 +13,16 @@
       <!-- Left Side Of Navbar -->
       <ul class="navbar-nav mr-auto">
         <!-- Authentication Links -->
-        @auth
+        {{-- @auth
         <li class="nav-item {{ (strpos(Route::currentRouteName(), 'dashboard') === 0) ? 'active' : '' }}">
-          <a class="nav-link" href="{{ route('dashboard') }}">
-            {{ __('Dashboard') }}<span class="sr-only">(current)</span></a>
+          <a class="nav-link" href="{{ route('dashboard') }}"><i class="bi bi-house"></i>
+            <span>{{ __('Dashboard') }}</span></a>
         </li>
         <li class="nav-item {{ (strpos(Route::currentRouteName(), 'users.index' ) === 0) ? 'active' : '' }}">
-          <a class="nav-link" href="{{ route('users.index') }}">
-            {{ __('Users') }}</a>
+          <a class="nav-link" href="{{ route('users.index') }}"><i class="bi bi-people"></i>
+            <span>{{ __('Users') }}</span></a>
         </li>
-        @endauth
+        @endauth --}}
       </ul>
 
       <!-- Right Side Of Navbar -->
@@ -38,20 +38,46 @@
         </li>
         @endif
         @else
+        {{-- <a class="nav-item nav-link" href="#"><i class="bi bi-house"></i><span>{{ __('Home') }}</span></a>
+        <a class="nav-item nav-link" href="#"><i class="bi bi-gear"></i><span>{{ __('Projects') }}</span></a>
+        <a class="nav-item nav-link" href="#"><i class="bi bi-people"></i><span>{{ __('Team') }}</span></a>
+        <a class="nav-item nav-link" href="#"><i class="bi bi-pie-chart"></i><span>{{ __('Reports') }}</span></a>
+        <a class="nav-item nav-link" href="#"><i class="bi bi-briefcase"></i><span>{{ __('Careers') }}</span></a>
+        <a class="nav-item nav-link" href="#"><i class="bi bi-envelope"></i><span>{{ __('Messages') }}</span></a>
+        <a class="nav-item nav-link" href="#"><i class="bi bi-bell"></i><span>{{ __('Notifications') }}</span></a> --}}
+        @endguest
+        <!-- Authentication Links -->
+        @auth
+        <li class="nav-item {{ (strpos(Route::currentRouteName(), 'dashboard') === 0) ? 'active' : '' }}">
+          <a class="nav-link" href="{{ route('dashboard') }}"><i class="bi bi-house"></i>
+            <span>{{ __('Dashboard') }}</span></a>
+        </li>
+        <li class="nav-item {{ (strpos(Route::currentRouteName(), 'users.index' ) === 0) ? 'active' : '' }}">
+          <a class="nav-link" href="{{ route('users.index') }}"><i class="bi bi-people"></i>
+            <span>{{ __('Users') }}</span></a>
+        </li>
         <li class="nav-item dropdown">
           <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown" aria-expanded="false">
-            {{ Auth::user()->name }}</a>
+            <img src="https://www.tutorialrepublic.com/examples/images/avatar/3.jpg" class="avatar" alt="Avatar">
+            <span>{{ Auth::user()->name }}</span></a>
           <div class="dropdown-menu dropdown-menu-right">
-            <a class="dropdown-item" href="#">{{ __('Profile') }}</a>
+            <a class="dropdown-item" href="#"><i class="bi bi-person"></i>
+              {{ __('Profile') }}</a>
+            <a class="dropdown-item" href="#"><i class="bi bi-calendar"></i>
+              {{ __('Calendar') }}</a>
+            <a class="dropdown-item" href="#"><i class="bi bi-sliders"></i>
+              {{ __('Settings') }}</a>
             <div class="dropdown-divider"></div>
             <a class="dropdown-item" href="{{ route('logout') }}"
-              onclick="event.preventDefault(); document.getElementById('logout-form').submit();">{{ __('Logout') }}</a>
+              onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+              <i class="bi bi-power"></i>
+              {{ __('Logout') }}</a>
             <form id="logout-form" action="{{ route('logout') }}" method="POST" style="display: none;">
               @csrf
             </form>
           </div>
         </li>
-        @endguest
+        @endauth
       </ul>
     </div>
   </div>

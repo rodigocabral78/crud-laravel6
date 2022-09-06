@@ -1,8 +1,8 @@
 @if ($paginator->hasPages())
 <nav>
   <div class="float-left">
-    {{ __('Showing') }} <b>{{ $paginator->lastItem() }}</b> {{ __('of') }} <b>{{ $paginator->total() }}</b> {{
-    __('results') }}
+    {{ __('Showing') }} <b>{{ $paginator->firstItem() }}</b> {{ __('to') }} <b>{{ $paginator->lastItem() }}</b> {{
+    __('of') }} <b>{{ $paginator->total() }}</b> {{ __('entries') }}
   </div>
   <ul class="pagination float-right">
     {{-- Previous Page Link --}}
