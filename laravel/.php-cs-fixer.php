@@ -21,9 +21,10 @@ $rules = [
         'position_after_functions_and_oop_constructs' => 'next',
     ],
     'cast_spaces' => ['space' => 'none'],
-    // 'class_attributes_separation' => [
+    'class_attributes_separation' => [
     //     'elements' => ['method', 'property'],
-    // ],
+        'elements' => ['method', 'one'],
+    ],
     'no_unused_imports'          => true,
     'class_keyword_remove'       => false,
     'combine_consecutive_issets' => false,
@@ -75,13 +76,19 @@ $finder = new Finder();
 
 $finder->in([
     __DIR__ . '/app',
+    __DIR__ . '/config',
+    __DIR__ . '/database',
+    __DIR__ . '/resources',
+    __DIR__ . '/routes',
+    __DIR__ . '/tests',
 ]);
 
 $config = new Config();
 
-$config->setIndent("    ");
-
 $config
+    // ->setIndent("    ")
+    ->setIndent("\t")
+    ->setLineEnding("\n")
     ->setRiskyAllowed(false)
     ->setRules($rules)
     ->setFinder($finder);
