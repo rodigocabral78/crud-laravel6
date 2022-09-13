@@ -19,6 +19,7 @@
 *.css  linguist-vendored
 *.scss linguist-vendored
 *.js   linguist-vendored
+*.map  linguist-vendored
 
 /example            export-ignore
 /tests              export-ignore
@@ -37,6 +38,8 @@
 
 *.blade.php  diff=html
 *.css        diff=css
+*.js         diff=js
+*.map        diff=map
 *.html       diff=html
 *.md         diff=markdown
 *.php        diff=php
